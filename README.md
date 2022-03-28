@@ -4,19 +4,23 @@ QL-dom is a library apart of the QL-dev framework. This library is designed to h
 
 ## How to use
 
-This git repo contains the README documenting the functionality of this library as well as the library file itself. You can easily use QL-dom in your project by requiring the script in your HTML file and instantiating the QL-dom object.
+This git repo contains the README documenting the functionality of this library as well as the library file itself. You can easily use QL-dom in your project by requiring the script in your HTML file, adding a div tag for QLdom to run inside of and instantiating the QL-dom object in your js file.
 
 ```index.html```
 
 ```html
 <script charset="utf-8" src="QLdom.js" type="text/javascript"></script>
 <script defer charset="utf-8" src="app.js" type="text/javascript"></script>
+
+<body>
+	<div id="app"></div>
+</body>
 ```
 
 ```app.js```
 
 ```javascript
-const QL = new QLdev();
+const QL = new QLdev('app');
 ```
 
 Alternatively you can download the full [QL-dev starter project](https://github.com/jwoodrow99/QL-dev/archive/refs/heads/main.zip). All you have to do is unzip it and start coding!

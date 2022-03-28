@@ -1,21 +1,7 @@
-/*
- *   QLdev (Quick Learn Development)
- *   Created By Jack Woodrow
- *   Version     1.0
- *   Date Last Modified 2022-03-23
- *
- *   To use link in html page:
- *   Hard File:  <script charset="utf-8" src="QLdom.js" type="text/javascript"></script>
- *
- *   Instantiate a new class at the top of your JS document:
- *   const QL = new QLdev();
- *
- *   Run library commands like so:
- *   QL.print("Hello World");
- */
-
 class QLdom {
-	constructor() {
+	constructor(parentId = 'app') {
+		this.parentId = parentId;
+
 		console.log('   ________  .____      ________');
 		console.log('   \\_____  \\ |    |     \\______ \\   _______  __');
 		console.log('    /  / \\  \\|    |      |    |  \\_/ __ \\  \\/ /');
@@ -37,7 +23,7 @@ class QLdom {
 				id = String(id);
 				foo.setAttribute('id', id);
 			}
-			document.body.appendChild(foo);
+			document.getElementById(this.parentId).appendChild(foo);
 			foo.appendChild(bar);
 		} else {
 			console.log('print - ' + '(' + ' VALUE IS NULL ' + ')');
@@ -50,7 +36,7 @@ class QLdom {
 			id = String(id);
 			foo.setAttribute('id', id);
 		} // end if
-		document.body.appendChild(foo);
+		document.getElementById(this.parentId).appendChild(foo);
 	} // end break
 
 	space(size, id) {
@@ -65,7 +51,7 @@ class QLdom {
 			size = '25';
 		} // end if
 		foo.setAttribute('style', 'width:' + size + 'px');
-		document.body.appendChild(foo);
+		document.getElementById(this.parentId).appendChild(foo);
 	} // end space
 
 	edit(id, text) {
@@ -307,7 +293,7 @@ class QLdom {
 				id = String(id);
 				foo.setAttribute('id', id);
 			} // end if
-			document.body.appendChild(foo);
+			document.getElementById(this.parentId).appendChild(foo);
 		} else {
 			console.log(
 				'button - ' +
@@ -333,7 +319,7 @@ class QLdom {
 			let foo = document.createElement('input');
 			foo.setAttribute('type', 'text');
 			foo.setAttribute('id', id);
-			document.body.appendChild(foo);
+			document.getElementById(this.parentId).appendChild(foo);
 		} else {
 			console.log('textBox - ' + '(' + 'ERROR - invalid parameter' + ')');
 		} // end if
@@ -361,7 +347,7 @@ class QLdom {
 			foo.setAttribute('id', id);
 			foo.setAttribute('rows', r);
 			foo.setAttribute('cols', c);
-			document.body.appendChild(foo);
+			document.getElementById(this.parentId).appendChild(foo);
 		} else {
 			console.log(
 				'text area - ' + '(' + 'ERROR - invalid parameter (id, row, col)' + ')'
@@ -383,7 +369,7 @@ class QLdom {
 			foo.setAttribute('id', id);
 			foo.setAttribute('name', nme);
 			foo.setAttribute('value', val);
-			document.body.appendChild(foo);
+			document.getElementById(this.parentId).appendChild(foo);
 		} else {
 			console.log(
 				'radio button - ' +
@@ -402,7 +388,7 @@ class QLdom {
 			foo.setAttribute('type', 'checkbox');
 			foo.setAttribute('id', id);
 			foo.setAttribute('value', val);
-			document.body.appendChild(foo);
+			document.getElementById(this.parentId).appendChild(foo);
 		} else {
 			console.log(
 				'check box - ' + '(' + 'ERROR - invalid parameter (id, row, col)' + ')'
